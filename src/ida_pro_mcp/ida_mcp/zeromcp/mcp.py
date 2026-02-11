@@ -295,9 +295,9 @@ class McpServer:
             request_handler,
             bind_and_activate=False
         )
-        self._http_server.allow_reuse_address = True
+        self._http_server.allow_reuse_address = False
         if hasattr(self._http_server, "allow_reuse_port"):
-            self._http_server.allow_reuse_port = True
+            self._http_server.allow_reuse_port = False
 
         # Set the MCPServer instance on the handler class
         setattr(self._http_server, "mcp_server", self)
